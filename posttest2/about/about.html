@@ -1,76 +1,183 @@
-<!DOCTYPE html>
-<html>
+* {
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+}
 
-<head>
-	<title>About us Page</title>
-  <link rel="stylesheet" href="about.css">
-  <style>
-    html {
-        scroll-behavior: smooth;
-    }
-</style>
-  
-</head>
-<body>
-	<section class="background firstsection">
-		<div class="box-main">
-			<div class="firstHalf">
-				<p class="text-big">About Me</p>
-				
-				<p class="text-small">
-					<a class="balik" href="/posttest2/index.html">Ga dulu</a>
-				</p>
-				<br>
-				<p class="center"><a href="#Order"
-				style="text-decoration:none;color:white;">
-						ini adalah tentang saya dan beberapa top tier waifu</a>
-				</p>
-				<div class="arrow"><a href="#aboutme"><img src="/posttest2/about/image.gif" alt="bottom arrow"></a>
-				</div>
-			</div>
-		</div>
-	</section>
-	<section class="about">
-		<h1 id="aboutme" style="margin-top:30px;text-align:center;">
-			Me and My Top Tier Waifu
-		</h1>
-	<div id="abouts">
-			<div class="box">
-				<img src="/posttest2/about/Nakiri Ayame.jpg" alt="picture goes here">
-			
-				<p class="center">
-					<a href="#waifu" style="text-decoration:none;color:black;font-weight:bold;font-family: 'Langar', cursive;">
-						NAKIRI AYAME
-					</a>
-				</p>
-				<p class="desc1" style="font-family: sans-serif">seorang yang energetik dan sangat memeable apalagi sebagai seorang waifu, dia adalah sebuah mahakarya</p>
-			</div>
-			<div class="box">
-				<img src="/posttest2/about/melfissa.jpg"alt="namaku">
-				
-				<p class="center">
-					<a href="#namaku" style="text-decoration:none;color:black;
-		font-weight:bold;font-family: 'Langar', cursive;">
-						MUHAMAD ABDULLAH
-					</a>
-				</p>
-				
-				<p class="desc2" style="font-family: sans-serif ">Seorang yang sangat sering mendambakan istri 2Dnya menjadi nyata dan ingin pergi ke isekai</p>
-			</div>
-			<div class="box">
-				<img src="/posttest2/about/rushia.jpg" alt="waifu2">
-				<br>
-				<p class="center">
-					<a href="#waifu2" style="text-decoration:none;color:black;font-weight:bold;font-family: 'Langar', cursive;">
-						URUHA RUSHIA
-					</a>
-				</p>
-				<p class="desc3" style="font-family: sans-serif ">Istri yang sangat menyakitkan bagi telinga belum lagi sangat mudah marah, tapi dengan kekuatan dari alkohol dia menjadi seorang necromancer yang sangat kawai mampu membuat diabetes</p>
+:root {
+    --navbar-height: 59px;
+}
+.logo {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-			</div>
-		</div>
-	
-	</section>
-</body>
+.logo img {
+    width: 33%;
+    border: 2px solid white;
+    border-radius: 50px;
+}
 
-</html>
+
+#search {
+    padding: 5px;
+    font-size: 17px;
+    border: 2px solid grey;
+    border-radius: 9px;
+}
+
+.background {
+    background: grey;
+    background-blend-mode: darken;
+    background-size: cover;
+}
+
+.firstsection {
+    height: 100vh;
+}
+
+.box-main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    max-width: 50%;
+    margin: auto;
+    height: 80%;
+}
+
+.firstHalf {
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.firstHalf img {
+    display: flex;
+    border-radius: 9050px;
+}
+
+.text-big {
+    font-family: 'Piazzolla', serif;
+    font-weight: bold;
+    font-size: 41px;
+    text-align: center;
+}
+
+.text-small {
+    font-family: 'Sansita Swashed', cursive;
+    font-size: 18px;
+    text-align: center;
+}
+
+#service {
+    margin: 34px;
+    display: flex;
+}
+
+#service .box {
+    padding: 100px;
+    margin: 3px 6px;
+    border-radius: 28px;
+}
+
+#service .box img {
+    margin-top: 10px;
+    height: 150px;
+    margin: auto;
+    display: block;
+    border-radius: 200px;
+}
+
+#service .box p {
+
+    font-family: sans-serif;
+    text-align: center;
+}
+
+#abouts {
+    margin: 34px;
+    display: flex;
+}
+
+#abouts .box {
+    width: 30%;
+    padding: 50px;
+    margin: 3px 6px;
+    border-radius: 28px;
+}
+
+#abouts .box img {
+    margin-top: 10px;
+    height: 150px;
+    margin: auto;
+    display: block;
+    border-radius: 100px;
+}
+
+#abouts .box p {
+
+    font-family: sans-serif;
+    text-align: center;
+}
+
+.btn {
+    padding: 8px 20px;
+    margin: 7px 0;
+    border: 2px solid white;
+    border-radius: 8px;
+    background: none;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-sm {
+    padding: 6px 10px;
+    vertical-align: middle;
+}
+
+.center {
+    text-align: center;
+}
+
+.text-footer {
+    text-align: center;
+    padding: 10px 0;
+    font-family: 'Ubuntu', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+@media screen and (max-width: 650px) {
+.column {
+width: 100%;
+display: block;
+}
+}
+
+.arrow{
+    position:relative;
+    width: 50%;
+    padding-left: 25%;
+    padding-top: 27%;
+}
+.arrow img{
+    width: 100%;
+    
+}
+.desc1{
+    width: 100%;
+}
+.desc2{
+    width: 100%;
+}
+.desc3{
+    width: 100%;
+}
+
+.balik{
+    text-decoration: none;
+    color: white;
+}
