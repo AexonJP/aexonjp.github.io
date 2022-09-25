@@ -168,14 +168,13 @@ display: block;
     
 }
 .desc1{
-    width: 200px;
+    width: 100%;
 }
 .desc2{
-    width: 200px;
+    width: 100%;
 }
 .desc3{
-    padding-left: 15px;
-    width: 200px;
+    width: 100%;
 }
 
 .balik{
