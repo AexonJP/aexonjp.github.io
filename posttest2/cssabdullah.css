@@ -168,11 +168,4 @@ table{
 font-size: xx-small;
 width: 100%;
 }
-.content-ongoing{
-flex-direction:column;
-justify-content:center;
-}
-.content-ongoing a{
-width:100%;
-}
 }
