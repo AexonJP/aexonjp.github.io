@@ -166,5 +166,12 @@ table{
 @media screen and (max-width: 650px) {
 .isi {
 font-size: xx-small;
+width: 100%;
 }
+.content-ongoing{
+flex-direction:column;
+justify-content:center;
+}
+.content-ongoing a{
+width:100%;
 }
