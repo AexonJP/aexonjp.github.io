@@ -163,3 +163,8 @@ table{
     transition: 1.5s;
     transform:rotateZ(0deg);
 }
+@media screen and (max-width: 650px) {
+.isi {
+font-size: small;
+}
+}
