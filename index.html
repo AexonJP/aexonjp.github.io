@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <script src="prit.js"></script>
+    <title>tugas</title>
+    
+</head>
+<body style="margin-left: -0.1%;">
+
+    <header>
+        <img src="gambar/profil2.jpg">
+        <div class="garis_menu">
+            <div class="menus">
+                <div class="menu_home" onclick="location.href='#menu_home'">
+                    HOME
+                </div>
+                <div class="menu_anime_list" onclick="location.href='#menu_anime_list'">
+                    ANIME LIST
+                </div>
+                <div class="menu_top_manga" onclick="location.href='#menu_top_manga'">
+                    TOP MANGA
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div id="content">
+            <article>
+                    <h1>Top On-Going Anime</h1>
+                    <ul id="top_anime_ongoing">
+                    </ul>
+            </article>
+            <article>
+                    <h1>Top Anime</h1>
+                    <ul onclick="" id="top_anime"></ul>
+            </article>
+        </div>
+        <aside>
+            <div class="profil">
+                <img class="background" src="gambar/header.jpg" alt="">
+                <div class="circle">
+                    <img class="foto_profil" src="gambar/foto_profil.jpg" alt="">
+                </div>
+                <div class="name">
+                    Abdullah
+                </div>
+                <div class="circle_github" onclick="location.href='https:\/\/github.com/AexonJP'">
+                    <img class="github" src="gambar/github.svg" alt="">
+                </div>
+                <div class="circle_linkedin"  onclick="location.href='https:\/\/www.linkedin.com/in/muhamad-abdullah-439a632a5/'">
+                    <img class="linkedin" src="gambar/linkedin.png" alt="">
+                </div>
+            </div>
+        </aside>
+    </main>
+    <footer>
+        <p>©2024 P Anime, Muhamad Abdullah</p>
+    </footer>
+    
+    <script>
+        getApiTop();
+        getApiTopAiring();
+    </script>
+
+</body>
+</html>
