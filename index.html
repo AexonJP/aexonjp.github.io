@@ -65,8 +65,8 @@
 					// console.log(yuk)
 					// this.id;
 					// console.log(id)
-					const drop_zone = document.getElementById(id);
-					drop_zone.textContent = yuk;
+					const tulisan = document.getElementById("tulisan");
+					tulisan.textContent = yuk;
 				})
 			})
 		}
@@ -107,10 +107,10 @@
 	<script>
 		function bandingkan(){
 
-			let drop_zone = document.getElementById("drop_zone");
-			let drop_zone2 = document.getElementById("drop_zone2");
-			let text1 = drop_zone.textContent;
-			let text2 = drop_zone2.textContent;
+			let tulisan = document.getElementById("tulisan");
+			let tulisan2 = document.getElementById("tulisan2");
+			let text1 = tulisan.textContent;
+			let text2 = tulisan2.textContent;
 			// if(drop_zonex.textContent == )
 			if(text1 == 'Drag PDF ke kotak ini ( drop zone ).' || text1 == 'gagal drag and drop') return
 			if(text2 == 'Drag PDF ke kotak ini ( drop zone ).' || text2 == 'gagal drag and drop') return
@@ -167,12 +167,12 @@
 
 		<pre
 		id="drop_zone"
-		style="border: 5px solid blue;overflow: auto;height:24em; display: inline-block;">Drag PDF ke kotak ini ( drop zone ).</pre>
+		style="border: 5px solid blue;overflow: auto;height:24em; display: inline-block;"><div id="tulisan">Drag PDF ke kotak ini ( drop zone ).</div></pre>
 		<div style="display: inline-block;width: 16%;"></div>
-
+		
 		<pre
 		id="drop_zone2"
-		style="border: 5px solid blue;overflow: auto;height: 24em; display: inline-block;">Drag PDF ke kotak ini ( drop zone ).</pre>
+		style="border: 5px solid blue;overflow: auto;height:24em; display: inline-block;"><div id="tulisan2">Drag PDF ke kotak ini ( drop zone ).</div><button></button></pre>
 
 		<br><button onclick="bandingkan()">bandingkan</button>
 		<br><div id="hiddentext"></div><br>
