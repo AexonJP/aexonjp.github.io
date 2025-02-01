@@ -67,7 +67,7 @@ function yoke(data1, data2, data1x, besar_kemiripan){
     //     console.log(paragraf[i]);
     // }
     console.log(keseluruhan/keseluruhandata1*100);
-    console.timeEnd('kecepatan algoritma');
+    console.timeEnd('kecepatan nodejs');
     return {paragraf, keseluruhan, keseluruhandata1}
 }
 
@@ -111,10 +111,10 @@ async function mains(data){
     // for (let i=0;i<prosess.length;i++){
     //     oo+=prosess[i]+'\n';
     // }
-    let ooo = ''
-    for (let i=0;i<proses.length;i++){
-        ooo+=proses[i]+'\n';
-    }
+    // let ooo = ''
+    // for (let i=0;i<proses.length;i++){
+    //     ooo+=proses[i]+'\n';
+    // }
     // console.log(oo)
     // console.log(ooo)
 
@@ -150,7 +150,7 @@ async function mains(data){
     // console.log(dekos);
 
     console.timeEnd("kecepatan");
-    return dekos, ooo;
+    return dekos, prosess;
     // console.log(proses)
 }
 
@@ -175,7 +175,7 @@ function unique_hash(data){
 }
 
 async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
-    console.time('kecepatan algoritma');
+    console.time('kecepatan nodejs');
     let data1x= mains(nama_file1);
     let data2x = mains(nama_file2);
     
@@ -186,7 +186,7 @@ async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
     let data1 = unique_hash(data1c);
     let data2 = unique_hash(data2c);
     // console.log(data1, data2);
-
+    
     data_semua=yoke(data1, data2, data1x, besar_kemiripan);
 
     let iyuk = pre1.split('\n')
