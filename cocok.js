@@ -150,7 +150,7 @@ async function mains(data){
     // console.log(dekos);
 
     console.timeEnd("kecepatan");
-    return {dekos, ooo};
+    return {dekos, oo};
     // console.log(proses)
 }
 
@@ -189,8 +189,8 @@ async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
     
     data_semua=yoke(data1, data2, data1x['dekos'], besar_kemiripan);
 
-    let iyuk = data1x['ooo'].split('\n')
-    let iyuks = data2x['ooo'].split('\n')
+    let iyuk = data1x['oo'].split('\n')
+    let iyuks = data2x['oo'].split('\n')
     // data1.split('\n');
     // data2.split('\n');
     return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], iyuk, iyuks};
