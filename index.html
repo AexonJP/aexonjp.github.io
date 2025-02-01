@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<script type="module">
-		import * as pdfjsLib from 'pdf.mjs';
+		import * as pdfjsLib from './pdf.mjs';
 
 		pdfjsLib.GlobalWorkerOptions.workerSrc =
-			'pdf.worker.mjs';
+			'./pdf.worker.mjs';
 		
 
 		function render_page(pageData) {
