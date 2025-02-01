@@ -2,10 +2,10 @@
 <html>
 	<head>
 		<script type="module">
-		import * as pdfjsLib from 'https://raw.githubusercontent.com/AexonJP/rabin-simpan/refs/heads/main/pdf.mjs';
+		import * as pdfjsLib from 'pdf.mjs';
 
 		pdfjsLib.GlobalWorkerOptions.workerSrc =
-			'https://raw.githubusercontent.com/AexonJP/rabin-simpan/refs/heads/main/pdf.worker.mjs';
+			'pdf.worker.mjs';
 		
 
 		function render_page(pageData) {
