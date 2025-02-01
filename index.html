@@ -99,9 +99,25 @@
 		const drop_zone = document.getElementById("drop_zone");
 		drop_zone.addEventListener("dragover", ok);
 		drop_zone.addEventListener("drop", darimana);
+		drop_zone.addEventListener("click", function(e){
+			let f = document.createElement('input');
+			f.style.display='none';
+			f.type='file';
+			f.name='file';
+			document.getElementById("drop_zone").appendChild(f);
+			f.click();
+		})
 		const drop_zone2 = document.getElementById("drop_zone2");
 		drop_zone2.addEventListener("dragover", ok);
 		drop_zone2.addEventListener("drop", darimana);
+		drop_zone2.addEventListener("click", function(e){
+			let f = document.createElement('input');
+			f.style.display='none';
+			f.type='file';
+			f.name='file';
+			document.getElementById("drop_zone2").appendChild(f);
+			f.click();
+		})
 
 	</script>
 	<script src="./cocok.js"></script>
@@ -168,12 +184,12 @@
 
 		<pre
 		id="drop_zone"
-		style="border: 5px solid blue;overflow: auto;height:24em; display: inline-block;"><div id="tulisan">Drag PDF ke kotak ini ( drop zone ).</div><input type="file" id="myfile" name="Upload file"></pre>
+		style="border: 5px solid blue;overflow: auto;height:24em; display: inline-block;"><div id="tulisan">Drag PDF ke kotak ini ( drop zone ).</div></pre>
 		<div style="display: inline-block;width: 16%;"></div>
 		
 		<pre
 		id="drop_zone2"
-		style="border: 5px solid blue;overflow: auto;height:24em; display: inline-block;"><div id="tulisan2">Drag PDF ke kotak ini ( drop zone ).</div><input type="file2" id="myfile2" name="Upload file"></pre>
+		style="border: 5px solid blue;overflow: auto;height:24em; display: inline-block;"><div id="tulisan2">Drag PDF ke kotak ini ( drop zone ).</div></pre>
 
 		<br><button onclick="bandingkan()">bandingkan</button>
 		<br><div id="hiddentext"></div><br>
