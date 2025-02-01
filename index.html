@@ -123,6 +123,9 @@
 			const hiddentext = document.getElementById('hiddentext');
 			hiddentext.innerHTML = 'dokumen yang anda berikan memiliki indikasi kesamaan sebesar ' +  (koyo['keseluruhan']/koyo['keseluruhandata1']*100) + '%'
 			const tablekonten = document.getElementById('tablekonten');
+			while (tablekonten.lastElementChild) {
+				tablekonten.removeChild(tablekonten.lastElementChild);
+			}
 			const trxs = document.createElement('tr');
             let paragraf2 = ["No 1","Dokumen 1", "Dokumen 2"];
             for (let j=0;j<3;j++){
