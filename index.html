@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script type="module">
+		import * as pdfjsLib from 'https://raw.githubusercontent.com/AexonJP/rabin-simpan/refs/heads/main/pdf.mjs';
+
+		pdfjsLib.GlobalWorkerOptions.workerSrc =
+			'https://raw.githubusercontent.com/AexonJP/rabin-simpan/refs/heads/main/pdf.worker.mjs';
+		
+
+		function render_page(pageData) {
+
+			let render_options = {
+				normalizeWhitespace: false,
+				disableCombineTextItems: false
+			}
+
+			return pageData.getTextContent(render_options)
+				.then(function(textContent) {
+					console.log(textContent)
+					let lastY, text = '';for (let item of textContent.items) {
+						if (lastY == item.transform[5] || !lastY){
+							text += item.str;
+						}  
+						else{
+							text += '\n' + item.str;
+						}    
+						lastY = item.transform[5];
+					}
+					return text;
+				});
+		}
+
+		function extractText(pdf_File, id) {
+			var pdfx = pdfjsLib.getDocument(pdf_File);
+			pdfx.promise.then(function(data){
+				console.log(data.numPages)
+				var countPromises = [];
+				for(let i =1;i<=data.numPages;i++){
+					countPromises.push(
+						data.getPage(i).then(e => {
+							// console.log(e)
+							return render_page(e)})
+					)
+					
+				}
+				// console.log(countPromises)
+				Promise.all(countPromises).then(e =>
+				{
+					console.log(e)
+					let yuk = e.join("\n\n");
+					// console.log(yuk)
+					// this.id;
+					// console.log(id)
+					const drop_zone = document.getElementById(id);
+					drop_zone.textContent = yuk;
+				})
+			})
+		}
+
+
+		function ok(ev){
+
+			console.log("ada disini")
+			ev.preventDefault();
+			
+		}
+
+		function darimana(e){
+			console.log("dari sini")
+			e.preventDefault();
+			if(e.dataTransfer && e.dataTransfer.files.length == 1){
+				var files = e.dataTransfer.files[0];
+				// console.log(files)
+				let koka = new FileReader();
+				koka.onload = (e) => {
+					extractText( e.target.result, this.id)
+				}
+				koka.readAsArrayBuffer(files)
+			}else{
+				console.log("gagal drag and drop")
+			}
+		}
+
+		const drop_zone = document.getElementById("drop_zone");
+		drop_zone.addEventListener("dragover", ok);
+		drop_zone.addEventListener("drop", darimana);
+		const drop_zone2 = document.getElementById("drop_zone2");
+		drop_zone2.addEventListener("dragover", ok);
+		drop_zone2.addEventListener("drop", darimana);
+
+	</script>
+	</head>
+
+	<body>
+
+		<pre
+		id="drop_zone"
+		style="border: 5px solid blue;overflow: auto;width: 40%;height:15em;float:left;">
+		<p>Drag PDF ke kotak ini <i>( drop zone )</i>.</p>
+		</pre>
+
+		<pre
+		id="drop_zone2"
+		style="border: 5px solid blue;overflow: auto;width: 40%;height: 15em;float:right;">
+		<p>Drag PDF ke kotak ini <i>( drop zone )</i>.</p>
+		</pre>
+
+
+		
+	</body>
+</html>
