@@ -67,12 +67,12 @@ function yoke(data1, data2, data1x, besar_kemiripan){
     //     console.log(paragraf[i]);
     // }
     console.log(keseluruhan/keseluruhandata1*100);
-    console.timeEnd('kecepatan nodejs');
+    // console.timeEnd('kecepatan nodejs');
     return {paragraf, keseluruhan, keseluruhandata1}
 }
 
 async function mains(data){
-    console.time("kecepatan");
+    console.time("kecepatan prepocessing");
     // const inputPdf = nama_file1 + '.pdf';
     // const outputTxt = nama_file1 + '.txt';
     // const outputpre = nama_file1 + ' - preprocessing.txt';
@@ -107,14 +107,14 @@ async function mains(data){
     }
 
 
-    // let oo = ''
-    // for (let i=0;i<prosess.length;i++){
-    //     oo+=prosess[i]+'\n';
-    // }
-    let ooo = ''
-    for (let i=0;i<proses.length;i++){
-        ooo+=proses[i]+'\n';
+    let oo = ''
+    for (let i=0;i<prosess.length;i++){
+        oo+=prosess[i]+'\n';
     }
+    // let ooo = ''
+    // for (let i=0;i<proses.length;i++){
+    //     ooo+=proses[i]+'\n';
+    // }
     // console.log(oo)
     // console.log(ooo)
 
@@ -149,7 +149,7 @@ async function mains(data){
 
     // console.log(dekos);
 
-    console.timeEnd("kecepatan");
+    console.timeEnd("kecepatan prepocessing");
     return {dekos, oo};
     // console.log(proses)
 }
@@ -175,19 +175,21 @@ function unique_hash(data){
 }
 
 async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
-    console.time('kecepatan nodejs');
     let data1x= await mains(nama_file1);
     let data2x = await mains(nama_file2);
-    
     // let data1c = data1x['dekos'];
     // let data2c, pre2 = data2x;
     // data2x = await data2x;
     // console.log(data1c)
+    console.time('kecepatan hashing');
     let data1 = unique_hash(data1x['dekos']);
     let data2 = unique_hash(data2x['dekos']);
+    console.timeEnd('kecepatan hashing');
     // console.log(data1, data2);
     
+    console.time('kecepatan pencocokan');
     data_semua=yoke(data1, data2, data1x['dekos'], besar_kemiripan);
+    console.timeEnd('kecepatan pencocokan');
 
     let iyuk = data1x['oo'].split('\n')
     let iyuks = data2x['oo'].split('\n')
