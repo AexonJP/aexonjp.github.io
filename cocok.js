@@ -67,7 +67,7 @@ function yoke(data1, data2, data1x, besar_kemiripan){
     //     console.log(paragraf[i]);
     // }
     console.log(keseluruhan/keseluruhandata1*100);
-    console.timeEnd('kecepatan nodejs');
+    console.timeEnd('kecepatan algoritma');
     return {paragraf, keseluruhan, keseluruhandata1}
 }
 
@@ -111,10 +111,10 @@ async function mains(data){
     // for (let i=0;i<prosess.length;i++){
     //     oo+=prosess[i]+'\n';
     // }
-    // let ooo = ''
-    // for (let i=0;i<proses.length;i++){
-    //     ooo+=proses[i]+'\n';
-    // }
+    let ooo = ''
+    for (let i=0;i<proses.length;i++){
+        ooo+=proses[i]+'\n';
+    }
     // console.log(oo)
     // console.log(ooo)
 
@@ -150,7 +150,7 @@ async function mains(data){
     // console.log(dekos);
 
     console.timeEnd("kecepatan");
-    return dekos, prosess;
+    return dekos, ooo;
     // console.log(proses)
 }
 
@@ -175,7 +175,7 @@ function unique_hash(data){
 }
 
 async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
-    console.time('kecepatan nodejs');
+    console.time('kecepatan algoritma');
     let data1x= mains(nama_file1);
     let data2x = mains(nama_file2);
     
@@ -187,141 +187,12 @@ async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
     let data2 = unique_hash(data2c);
     // console.log(data1, data2);
 
-    // if(cek_kah == true){
-
-
-    //     let okpeo = true;
-    //     const json_data = JSON.stringify(data1);
-    //     // const json_data1_buffer = Buffer.from(json_data);
-    //     let okpeo2 = true;
-    //     const json_data2 = JSON.stringify(data2);
-    //     // const json_data2_buffer = Buffer.from(json_data2);
-    
-    //     let sameh = fs.readdirSync("./file_array");
-    //     console.log(sameh);
-    
-    //     for (let i =0;i<sameh.length;i++){
-    //         const ikkxx = fs.readFileSync("./file_array/"+sameh[i]);
-    //         // console.log(ikkxx);
-    //         // console.log(json_data1_buffer);
-    //         if (json_data === ikkxx.toString()){
-    //             okpeo = false;
-    //             // console.log('salah');
-    //         }
-    //         if(json_data2 === ikkxx.toString()){
-    //             okpeo2 = false;
-    //             // console.log('salah');
-    //         }
-    //     }
-        
-    //     // for (let i =0;i<sameh.length;i++){
-    //     //     const ikkxx = fs.readFileSync("./file_array/"+sameh[i]);
-    //     //     if (json_data2 == ikkxx){
-    //     //         okpeo = false;;
-    //     //     }
-    //     // }
-    
-    //     if(okpeo == true){
-    //         // const kopp = new Date();
-    //         fs.writeFileSync('./file_array/'+v4.v4()+'.json', 
-    //             json_data, (err) => {
-    //                 if (err) throw err;
-    //             }
-    //         );
-    //     }
-    //     else{
-    //         console.log("file 1 ditemukan di directory");
-    //     }
-
-    //     if(okpeo2 == true){
-    //         // const kopp = new Date();
-    //         fs.writeFileSync('./file_array/'+v4.v4()+'.json', 
-    //             json_data2, (err) => {
-    //                 if (err) throw err;
-    //             }
-    //         );
-    //     }
-    //     else{
-    //         console.log("file 2 ditemukan di directory");
-    //     }
-
-    // }
-
-    
     data_semua=yoke(data1, data2, data1x, besar_kemiripan);
 
-    let iyuk = pre1
-    let iyuks = pre2
+    let iyuk = pre1.split('\n')
+    let iyuks = pre2.split('\n')
     // data1.split('\n');
     // data2.split('\n');
     return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], iyuk, iyuks};
     
 }
-
-
-// async function mainsk(nama_file1, besar_kemiripan, cek_kah) {
-//     console.time('kecepatan nodejs');
-//     let data1x = mains(nama_file1);
-    
-//     data1x = await data1x;
-//     // console.log(data1)
-//     let data1 = unique_hash(data1x);
-
-//     if(cek_kah == true){
-
-//         let okpeo = true;
-//         const json_data = JSON.stringify(data1);
-//         // const json_data1_buffer = Buffer.from(json_data);
-//         // const json_data2_buffer = Buffer.from(json_data2);
-    
-//         let sameh = fs.readdirSync("./file_array");
-//         console.log(sameh);
-    
-//         for (let i =0;i<sameh.length;i++){
-//             const ikkxx = fs.readFileSync("./file_array/"+sameh[i]);
-//             // console.log(ikkxx);
-//             // console.log(json_data1_buffer);
-//             let data2 = unique_hash(JSON.parse(ikkxx.toString));
-//             // if (json_data === ikkxx.toString()){
-//             //     okpeo = false;
-//             //     // console.log('salah');
-//             // }
-//         }
-        
-//         // for (let i =0;i<sameh.length;i++){
-//         //     const ikkxx = fs.readFileSync("./file_array/"+sameh[i]);
-//         //     if (json_data2 == ikkxx){
-//         //         okpeo = false;;
-//         //     }
-//         // }
-    
-//         // if(okpeo == true){
-//         //     // const kopp = new Date();
-//         //     fs.writeFileSync('./file_array/'+v4.v4()+'.json', 
-//         //         json_data, (err) => {
-//         //             if (err) throw err;
-//         //         }
-//         //     );
-//         // }
-//         // else{
-//         //     console.log("file 1 ditemukan di directory");
-//         // }
-
-//     }
-
-    
-
-//     data_semua=yoke(data1, data2, data1x);
-    
-
-//     // console.log(paragraf)
-//     // for (let i =0;i<paragraf.length;i++){
-//     //     console.log(paragraf[i]);
-//     // }
-//     // console.log(keseluruhan/keseluruhandata1*100);
-//     // console.timeEnd('kecepatan nodejs');
-//     let iyuk = fs.readFileSync(nama_file1+'.txt', 'utf8').split('\n');
-//     // let iyuks = fs.readFileSync(nama_file2+'.txt', 'utf8').split('\n');
-//     return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], iyuk};
-    
-// }
