@@ -99,26 +99,9 @@
 		const drop_zone = document.getElementById("drop_zone");
 		drop_zone.addEventListener("dragover", ok);
 		drop_zone.addEventListener("drop", darimana);
-		drop_zone.addEventListener("click", function(e){
-			let f = document.createElement('input');
-			f.style.display='none';
-			f.type='file';
-			f.name='file';
-			document.getElementById("drop_zone").appendChild(f);
-			f.click();
-		})
 		const drop_zone2 = document.getElementById("drop_zone2");
 		drop_zone2.addEventListener("dragover", ok);
 		drop_zone2.addEventListener("drop", darimana);
-		drop_zone2.addEventListener("click", function(e){
-			let f = document.createElement('input');
-			f.style.display='none';
-			f.type='file';
-			f.name='file';
-			document.getElementById("drop_zone2").appendChild(f);
-			f.click();
-		})
-
 	</script>
 	<script src="./cocok.js"></script>
 	<script>
