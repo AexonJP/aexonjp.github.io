@@ -120,6 +120,8 @@
 		}
 
 		function tabel(koyo){
+			const hiddentext = document.getElementById('hiddentext');
+			hiddentext.innerHTML = koyo['keseluruhan']/koyo['keseluruhan1']*100
 			const tablekonten = document.getElementById('tablekonten');
 			const trxs = document.createElement('tr');
             let paragraf2 = ["No 1","Dokumen 1", "Dokumen 2", "No 2"];
@@ -169,7 +171,8 @@
 		id="drop_zone2"
 		style="border: 5px solid blue;overflow: auto;height: 15em; display: inline-block;">Drag PDF ke kotak ini ( drop zone ).</pre>
 
-		<br><button onclick="bandingkan()">harus</button>
+		<br><button onclick="bandingkan()">bandingkan</button>
+		<br><div id="hiddentext"></div><br>
 		<table id="tablekonten" style="width:100%" hidden="true"></table>
 
 
