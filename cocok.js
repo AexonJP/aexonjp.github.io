@@ -107,16 +107,17 @@ async function mains(data){
     }
 
 
-    let oo = ''
-    for (let i=0;i<prosess.length;i++){
-        oo+=prosess[i]+'\n';
-    }
-    let ooo = ''
-    for (let i=0;i<proses.length;i++){
-        ooo+=proses[i]+'\n';
-    }
-    console.log(oo)
-    console.log(ooo)
+    // let oo = ''
+    // for (let i=0;i<prosess.length;i++){
+    //     oo+=prosess[i]+'\n';
+    // }
+    // let ooo = ''
+    // for (let i=0;i<proses.length;i++){
+    //     ooo+=proses[i]+'\n';
+    // }
+    // console.log(oo)
+    // console.log(ooo)
+
     // fs.writeFileSync(outputTxt,oo,{encoding: "utf8"});
     // fs.writeFileSync(outputpre,ooo,{encoding: "utf8"});
 
@@ -149,7 +150,7 @@ async function mains(data){
     // console.log(dekos);
 
     console.timeEnd("kecepatan");
-    return dekos, ooo;
+    return dekos, prosess;
     // console.log(proses)
 }
 
@@ -249,8 +250,8 @@ async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
     
     data_semua=yoke(data1, data2, data1x, besar_kemiripan);
 
-    let iyuk = pre1.split('\n')
-    let iyuks = pre2.split('\n')
+    let iyuk = pre1
+    let iyuks = pre2
     // data1.split('\n');
     // data2.split('\n');
     return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], iyuk, iyuks};
