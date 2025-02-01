@@ -1,8 +1,20 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<script type="module">
+		<style>
+		pre {
+			width: 40%;
+		}	
+			@media only screen and (max-width: 714px) {
+			  pre {
+				width: 97%;
+			  }
+			}
+			</style>
+	<script type="module">
 		import * as pdfjsLib from './pdf.mjs';
+
+		import mainsk from './cocok'
 
 		pdfjsLib.GlobalWorkerOptions.workerSrc =
 			'./pdf.worker.mjs';
@@ -90,21 +102,34 @@
 		drop_zone2.addEventListener("drop", darimana);
 
 	</script>
+	<script src="./cocok.js"></script>
+	<script>
+		function bandingkan(e){
+
+			let drop_zone = document.getElementById("drop_zone");
+			let drop_zone2 = document.getElementById("drop_zone2");
+			let text1 = drop_zone.textContent;
+			let text2 = drop_zone2.textContent;
+			// if(drop_zonex.textContent == )
+			if(text1 == 'Drag PDF ke kotak ini ( drop zone ).' || text1 == 'gagal drag and drop') return
+			if(text2 == 'Drag PDF ke kotak ini ( drop zone ).' || text2 == 'gagal drag and drop') return
+			console.log(mainsk(text1, text2, 0.7))
+		}
+	</script>
 	</head>
 
-	<body>
+	<body style="width: auto;height: auto;">
 
 		<pre
 		id="drop_zone"
-		style="border: 5px solid blue;overflow: auto;width: 40%;height:15em;float:left;">
-		<p>Drag PDF ke kotak ini <i>( drop zone )</i>.</p>
-		</pre>
+		style="border: 5px solid blue;overflow: auto;height:15em; display: inline-block;">Drag PDF ke kotak ini ( drop zone ).</pre>
+		<div style="display: inline-block;width: 16%;"></div>
 
 		<pre
 		id="drop_zone2"
-		style="border: 5px solid blue;overflow: auto;width: 40%;height: 15em;float:right;">
-		<p>Drag PDF ke kotak ini <i>( drop zone )</i>.</p>
-		</pre>
+		style="border: 5px solid blue;overflow: auto;height: 15em; display: inline-block;">Drag PDF ke kotak ini ( drop zone ).</pre>
+
+		<br><button onclick="bandingkan()">harus</button>
 
 
 		

@@ -71,11 +71,11 @@ function yoke(data1, data2, data1x, besar_kemiripan){
     return {paragraf, keseluruhan, keseluruhandata1}
 }
 
-async function mains(nama_file1){
+async function mains(data){
     console.time("kecepatan");
-    const inputPdf = nama_file1 + '.pdf';
-    const outputTxt = nama_file1 + '.txt';
-    const outputpre = nama_file1 + ' - preprocessing.txt';
+    // const inputPdf = nama_file1 + '.pdf';
+    // const outputTxt = nama_file1 + '.txt';
+    // const outputpre = nama_file1 + ' - preprocessing.txt';
 
     // let iyuk = fs.readFileSync(inputPdf);
     // let kok = await pdf(iyuk);
@@ -115,6 +115,8 @@ async function mains(nama_file1){
     for (let i=0;i<proses.length;i++){
         ooo+=proses[i]+'\n';
     }
+    console.log(oo)
+    console.log(ooo)
     // fs.writeFileSync(outputTxt,oo,{encoding: "utf8"});
     // fs.writeFileSync(outputpre,ooo,{encoding: "utf8"});
 
@@ -171,7 +173,7 @@ function unique_hash(data){
     return lapos;
 }
 
-async function mainsk(nama_file1, nama_file2, besar_kemiripan, cek_kah) {
+async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
     console.time('kecepatan nodejs');
     let data1x = mains(nama_file1);
     let data2x = mains(nama_file2);
@@ -320,5 +322,3 @@ async function mainsk(nama_file1, nama_file2, besar_kemiripan, cek_kah) {
 //     return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], iyuk};
     
 // }
-
-module.exports = {mainsk}
