@@ -102,7 +102,7 @@
 	</script>
 	<script src="./cocok.js"></script>
 	<script>
-		function bandingkan(e){
+		function bandingkan(){
 
 			let drop_zone = document.getElementById("drop_zone");
 			let drop_zone2 = document.getElementById("drop_zone2");
@@ -112,6 +112,43 @@
 			if(text1 == 'Drag PDF ke kotak ini ( drop zone ).' || text1 == 'gagal drag and drop') return
 			if(text2 == 'Drag PDF ke kotak ini ( drop zone ).' || text2 == 'gagal drag and drop') return
 			console.log(mainsk(text1, text2, 0.7))
+		}
+
+		function tabel(){
+			const tablekonten = document.getElementById('tablekonten');
+			const trxs = document.createElement('tr');
+            let paragraf2 = ["No 1","Dokumen 1", "Dokumen 2", "No 2"];
+            for (let j=0;j<4;j++){
+                const thsc = document.createElement('th');
+                thsc.textContent = paragraf2[j]
+                trxs.append(thsc)
+            }
+            tablekonten.append(trxs)
+            for (let i =0;i<result["paragraf"].length;i++){
+                // console.log(result["paragraf"][i])
+                const trxsx = document.createElement('tr');
+                let opp1 = document.createElement('td')
+                let opp2 = document.createElement('td')
+                let opp3 = document.createElement('td')
+                let opp4 = document.createElement('td')
+                opp1.textContent =result["paragraf"][i][0]
+                opp2.textContent =result["iyuk"][result["paragraf"][i][0]-1]
+                opp3.textContent =result["iyuks"][result["paragraf"][i][1]-1]
+                opp4.textContent =result["paragraf"][i][1]
+                trxsx.append(opp1);
+                trxsx.append(opp2);
+                trxsx.append(opp3);
+                trxsx.append(opp4);
+                // // for (let j=0;j<2;j++){
+                //     const thsc = document.createElement('td');
+                //     thsc.textContent = result["iyuk"][result["paragraf"][i][j]];
+                    // trxsx.append(thsc)
+                // }
+                // iyuk
+                // trxs.textContent = result["paragraf"][i][0]
+                tablekonten.append(trxsx)
+                tablekonten.hidden=false;
+			}
 		}
 	</script>
 	</head>
@@ -128,6 +165,7 @@
 		style="border: 5px solid blue;overflow: auto;height: 15em; display: inline-block;">Drag PDF ke kotak ini ( drop zone ).</pre>
 
 		<br><button onclick="bandingkan()">harus</button>
+		<table id="tablekonten" style="width:100%" hidden="true"></table>
 
 
 		

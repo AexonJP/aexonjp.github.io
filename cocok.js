@@ -249,9 +249,9 @@ async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
     data_semua=yoke(data1, data2, data1x, besar_kemiripan);
 
 
-    // let iyuk = fs.readFileSync(nama_file1+'.txt', 'utf8').split('\n');
-    // let iyuks = fs.readFileSync(nama_file2+'.txt', 'utf8').split('\n');
-    return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], iyuk, iyuks};
+    // data1.split('\n');
+    // data2.split('\n');
+    return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], 'iyuk':data_semua['keseluruhan'], 'iyuks':data_semua['keseluruhandata1']};
     
 }
 
