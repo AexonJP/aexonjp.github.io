@@ -149,7 +149,7 @@ async function mains(data){
     // console.log(dekos);
 
     console.timeEnd("kecepatan");
-    return dekos;
+    return dekos, ooo;
     // console.log(proses)
 }
 
@@ -175,14 +175,15 @@ function unique_hash(data){
 
 async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
     console.time('kecepatan nodejs');
-    let data1x = mains(nama_file1);
+    let data1x= mains(nama_file1);
     let data2x = mains(nama_file2);
     
-    data1x = await data1x;
-    data2x = await data2x;
+    let data1c, pre1 = await data1x;
+    let data2c, pre2 = await data2x;
+    // data2x = await data2x;
     // console.log(data1)
-    let data1 = unique_hash(data1x);
-    let data2 = unique_hash(data2x);
+    let data1 = unique_hash(data1c);
+    let data2 = unique_hash(data2c);
     // console.log(data1, data2);
 
     // if(cek_kah == true){
@@ -248,10 +249,11 @@ async function mainsk(nama_file1, nama_file2, besar_kemiripan) {
     
     data_semua=yoke(data1, data2, data1x, besar_kemiripan);
 
-
+    let iyuk = pre1.split('\n')
+    let iyuks = pre2.split('\n')
     // data1.split('\n');
     // data2.split('\n');
-    return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], 'iyuk':data_semua['keseluruhan'], 'iyuks':data_semua['keseluruhandata1']};
+    return {'paragraf':data_semua['paragraf'], 'keseluruhan':data_semua['keseluruhan'], 'keseluruhandata1':data_semua['keseluruhandata1'], iyuk, iyuks};
     
 }
 
