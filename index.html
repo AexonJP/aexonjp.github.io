@@ -100,7 +100,7 @@
 				var files = this.files[0];
 				let koka = new FileReader();
 				koka.onload = (e) => {
-					extractText( e.target.result, dimana)
+					extractText( e.target.result, dimana);
 				}
 				koka.readAsArrayBuffer(files)
 		}
@@ -110,14 +110,14 @@
 		drop_zone.addEventListener("dragover", ok);
 		drop_zone.addEventListener("drop", darimana);
 		drop_zone.addEventListener("click", function(e){file1.click()});
-		file1.addEventListener("change", darimanax,"drop_zone");
+		file1.addEventListener("change", darimanax(event, "drop_zone"));
 		
 		const file2 = document.getElementById("file2");
 		const drop_zone2 = document.getElementById("drop_zone2");
 		drop_zone2.addEventListener("dragover", ok);
 		drop_zone2.addEventListener("drop", darimana);
 		drop_zone2.addEventListener("click", function(e){file1.click()});
-		file2.addEventListener("change", darimanax, "drop_zone2");
+		file2.addEventListener("change", darimanax(event, "drop_zone2"));
 
 
 	</script>
