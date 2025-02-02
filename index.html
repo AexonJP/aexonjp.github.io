@@ -110,12 +110,14 @@
 		drop_zone.addEventListener("dragover", ok);
 		drop_zone.addEventListener("drop", darimana);
 		drop_zone.addEventListener("click", function(e){file1.click()});
-		drop_zone.addEventListener("change", darimanax);
+		file1.addEventListener("change", darimanax);
+		
+		const file2 = document.getElementById("file2");
 		const drop_zone2 = document.getElementById("drop_zone2");
 		drop_zone2.addEventListener("dragover", ok);
 		drop_zone2.addEventListener("drop", darimana);
 		drop_zone2.addEventListener("click", function(e){file1.click()});
-		drop_zone2.addEventListener("change", darimanax);
+		file2.addEventListener("change", darimanax);
 
 
 	</script>
