@@ -157,7 +157,7 @@
 				tablekonten.removeChild(tablekonten.lastElementChild);
 			}
 			const trxs = document.createElement('tr');
-            let paragraf2 = ["No 1","Dokumen 1", "Dokumen 2"];
+            let paragraf2 = ["No","Dokumen 1", "Dokumen 2"];
             for (let j=0;j<3;j++){
                 const thsc = document.createElement('th');
                 thsc.textContent = paragraf2[j]
@@ -171,7 +171,7 @@
                 let opp2 = document.createElement('td')
                 let opp3 = document.createElement('td')
                 // let opp4 = document.createElement('td')
-                opp1.textContent =koyo["paragraf"][i][0]
+                opp1.textContent =i+1
                 opp2.textContent =koyo["iyuk"][koyo["paragraf"][i][0]-1]
                 opp3.textContent =koyo["iyuks"][koyo["paragraf"][i][1]-1]
                 // opp4.textContent =koyo["paragraf"][i][1]
