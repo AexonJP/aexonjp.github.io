@@ -97,7 +97,7 @@
 		}
 
 		function darimanax(e){
-				var files = e.files[0];
+				var files = this.files[0];
 				let koka = new FileReader();
 				koka.onload = (e) => {
 					extractText( e.target.result, "file1")
