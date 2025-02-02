@@ -96,11 +96,19 @@
 			}
 		}
 
-		function darimanax(e){
+		function darimana1(e){
 				var files = this.files[0];
 				let koka = new FileReader();
 				koka.onload = (e) => {
-					extractText( e.target.result, dimana);
+					extractText( e.target.result, "drop_zone");
+				}
+				koka.readAsArrayBuffer(files)
+		}
+		function darimana2(e){
+				var files = this.files[0];
+				let koka = new FileReader();
+				koka.onload = (e) => {
+					extractText( e.target.result, "drop_zone2");
 				}
 				koka.readAsArrayBuffer(files)
 		}
@@ -110,14 +118,14 @@
 		drop_zone.addEventListener("dragover", ok);
 		drop_zone.addEventListener("drop", darimana);
 		drop_zone.addEventListener("click", function(e){file1.click()});
-		file1.addEventListener("change", darimanax);
+		file1.addEventListener("change", darimana1);
 		
 		const file2 = document.getElementById("file2");
 		const drop_zone2 = document.getElementById("drop_zone2");
 		drop_zone2.addEventListener("dragover", ok);
 		drop_zone2.addEventListener("drop", darimana);
 		drop_zone2.addEventListener("click", function(e){file1.click()});
-		file2.addEventListener("change", darimanax);
+		file2.addEventListener("change", darimana2);
 
 
 	</script>
