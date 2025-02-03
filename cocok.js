@@ -47,10 +47,9 @@ function yoke(data1, data2, data1x, besar_kemiripan){
         }
         if(tertinggi > 0){
             paragraf.push([k+1,simpan+1, tertinggi])
-
         }
         keseluruhan+=tertinggi
-        // console.log(keseluruhan);
+        console.log(keseluruhan);
     }
 
 
