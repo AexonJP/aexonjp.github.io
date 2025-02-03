@@ -46,10 +46,10 @@ function yoke(data1, data2, data1x, besar_kemiripan){
             }
         }
         if(tertinggi > 0){
-            paragraf.push([k+1,simpan+1, tertinggi])
+            paragraf.push([k+1,simpan+1, tertinggi, tertinggi/data1x[k].length])
         }
         keseluruhan+=tertinggi
-        console.log(keseluruhan);
+        // console.log(paragraf);
     }
 
 
@@ -61,7 +61,7 @@ function yoke(data1, data2, data1x, besar_kemiripan){
 
 
 
-    // console.log(paragraf)
+    console.log(paragraf)
     // for (let i =0;i<paragraf.length;i++){
     //     console.log(paragraf[i]);
     // }
