@@ -43,7 +43,7 @@ function yoke(data1, data2, data1x, besar_kemiripan){
                     tertinggi = kesamaan
                     simpan = i;
                 }
-            }
+            }   
         }
         if(tertinggi > 0){
             paragraf.push([k+1,simpan+1, tertinggi, tertinggi/data1x[k].length])
