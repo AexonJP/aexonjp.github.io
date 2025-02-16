@@ -90,7 +90,7 @@ async function mains(data){
     let proses = [];
     for (let i =0;i<data.length;i++){
         let ip = data[i].replace(/[^a-z]/g, '');
-        if(ip.length > 15){
+        if(ip.length >= 15){
             proses.push(ip);
         }
     }
@@ -100,7 +100,7 @@ async function mains(data){
     for (let i =0;i<data.length;i++){
         let ip = data[i].replace(/[^a-z]/g, '');
         let ips = data[i];
-        if(ip.length > 15){
+        if(ip.length >= 15){
             prosess.push(ips);
         }
     }
