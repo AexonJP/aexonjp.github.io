@@ -3,7 +3,7 @@
 Website for **Aexon**, a DevOps & software studio founded by Muhamad Abdullah:
 Docker & CI/CD pipelines, web design, website maintenance and custom software.
 
-Live at <https://www.aexonjp.net/> (GitHub Pages, served from `main`; domain set in `CNAME`).
+Live at <https://www.aexonjp.my.id/> (GitHub Pages, served from `main`; domain set in `CNAME`).
 
 ## Structure
 
