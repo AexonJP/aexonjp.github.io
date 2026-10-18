@@ -569,20 +569,14 @@ p { margin: 0; }
 .sf-board i { height: 12px; background: var(--flap); }
 .sf-board i:nth-child(6) { background: #3ccf7e; }
 
-/* Pixel world: blocks are placed bottom-up, then cleared, on a loop */
-.world .world-frame { width: 212px; margin-top: 18px; background: var(--paper); border: 1.5px solid var(--ink); transition: transform .6s var(--ease); }
-.work-card:hover .world .world-frame { transform: translateY(-6px) rotate(2deg); }
+/* Live project: real screenshot in a browser frame */
+.world .world-frame { display: block; width: min(80%, 270px); margin-top: 18px; background: var(--paper); border: 1.5px solid var(--ink); transition: transform .6s var(--ease); }
+.work-card:hover .world .world-frame { transform: translateY(-6px) rotate(-1.5deg); }
 .wf-bar { display: flex; align-items: center; gap: 4px; padding: 6px 8px; border-bottom: 1.5px solid var(--ink); }
 .wf-bar i { width: 6px; height: 6px; flex: none; border: 1.5px solid var(--ink); border-radius: 50%; }
 .wf-url { margin-left: 6px; font-family: var(--mono); font-size: 9.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.world-grid { display: grid; grid-template-columns: repeat(10, 1fr); gap: 2px; padding: 10px; }
-.world-grid i { aspect-ratio: 1; }
-.world-grid i[class] { border: 1px solid var(--ink); transform: scale(0); animation: place 7s var(--ease) infinite; animation-delay: calc(var(--n) * 60ms); }
-.world-grid .g { background: linear-gradient(#3ccf7e 0 38%, #9a6a44 38%); }
-.world-grid .d { background: #9a6a44; }
-.world-grid .o { background: var(--orange); }
-.world-grid .b { background: var(--ink); }
-@keyframes place { 0% { transform: scale(0); } 6% { transform: scale(1.12); } 9%, 88% { transform: scale(1); } 96%, 100% { transform: scale(0); } }
+.world-frame img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+.work-note { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
 
 /* "Your project, next" runs full width under the project cards */
 .work-next {
@@ -833,6 +827,5 @@ p { margin: 0; }
   .hero-title .word, .hero-in { transform: none; opacity: 1; }
   .js [data-reveal] { opacity: 1; transform: none; }
   .js .wordmark span { transform: none; }
-  .world-grid i[class] { animation: none; transform: none; }
   .hl { background-size: 100% .26em; }
 }
