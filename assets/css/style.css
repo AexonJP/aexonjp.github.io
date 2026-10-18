@@ -531,6 +531,8 @@ p { margin: 0; }
   position: absolute; left: 14px; top: 14px; padding: 4px 9px; background: var(--ink); color: var(--paper);
   font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .06em;
 }
+.visual-tag.is-live { display: inline-flex; align-items: center; gap: 7px; }
+.visual-tag.is-live::before { content: ""; width: 7px; height: 7px; background: #3ccf7e; animation: blink 1.4s steps(1) infinite; }
 .work-body { display: flex; flex-direction: column; gap: 12px; flex: 1; padding: 24px 24px 28px; }
 .work-body h3 { font-size: 32px; font-stretch: 72%; font-weight: 850; }
 .work-body p { color: var(--ink-2); font-size: 16px; }
@@ -567,10 +569,26 @@ p { margin: 0; }
 .sf-board i { height: 12px; background: var(--flap); }
 .sf-board i:nth-child(6) { background: #3ccf7e; }
 
-.work-next { align-items: flex-start; justify-content: center; gap: 14px; padding: 32px 28px; border-style: dashed; background: transparent; }
-.work-next h3 { font-size: 40px; font-stretch: 72%; font-weight: 850; }
-.work-next p { color: var(--ink-2); }
-.next-plus { display: grid; place-items: center; width: 60px; height: 60px; background: var(--orange); border: 1.5px solid var(--ink); margin-bottom: 8px; transition: transform .6s var(--ease); }
+/* Live project: real screenshot in a browser frame */
+.world .world-frame { display: block; width: min(80%, 270px); margin-top: 18px; background: var(--paper); border: 1.5px solid var(--ink); transition: transform .6s var(--ease); }
+.work-card:hover .world .world-frame { transform: translateY(-6px) rotate(-1.5deg); }
+.wf-bar { display: flex; align-items: center; gap: 4px; padding: 6px 8px; border-bottom: 1.5px solid var(--ink); }
+.wf-bar i { width: 6px; height: 6px; flex: none; border: 1.5px solid var(--ink); border-radius: 50%; }
+.wf-url { margin-left: 6px; font-family: var(--mono); font-size: 9.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.world-frame img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; }
+.work-note { font-family: var(--mono); font-size: 11.5px; color: var(--muted); }
+
+/* "Your project, next" runs full width under the project cards */
+.work-next {
+  grid-column: 1 / -1;
+  display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; column-gap: 28px; row-gap: 4px;
+  padding: 28px; border-style: dashed; background: transparent;
+}
+.work-next .next-plus { grid-row: 1 / span 2; }
+.work-next h3 { grid-column: 2; font-size: 40px; font-stretch: 72%; font-weight: 850; }
+.work-next p { grid-column: 2; color: var(--ink-2); }
+.work-next .link-arrow { grid-column: 3; grid-row: 1 / span 2; }
+.next-plus { display: grid; place-items: center; width: 60px; height: 60px; background: var(--orange); border: 1.5px solid var(--ink); transition: transform .6s var(--ease); }
 .next-plus svg { width: 28px; height: 28px; }
 .work-next:hover .next-plus { transform: rotate(90deg); }
 .work-more { margin-top: 28px; color: var(--ink-2); }
@@ -746,7 +764,8 @@ p { margin: 0; }
   .plan-desc { min-height: 0; }
 
   .work { grid-template-columns: 1fr 1fr; }
-  .work-next { grid-column: 1 / -1; }
+  .work-card.featured { grid-column: 1 / -1; flex-direction: row; }
+  .work-card.featured .work-visual { flex: 0 0 46%; height: auto; min-height: 240px; border-bottom: 0; border-right: 1.5px solid var(--ink); }
 
   .founder { grid-template-columns: 1fr; }
   .founder-photo { position: relative; top: 0; max-width: 420px; margin-bottom: 28px; }
@@ -776,7 +795,12 @@ p { margin: 0; }
   .step-num { margin-bottom: 4px; }
 
   .work { grid-template-columns: 1fr; }
-  .work-next { grid-column: auto; }
+  .work-card.featured { flex-direction: column; }
+  .work-card.featured .work-visual { flex: none; height: 220px; min-height: 0; border-right: 0; border-bottom: 1.5px solid var(--ink); }
+  .work-next { grid-template-columns: 1fr; }
+  .work-next .next-plus, .work-next h3, .work-next p, .work-next .link-arrow { grid-column: 1; grid-row: auto; }
+  .work-next .next-plus { margin-bottom: 8px; }
+  .work-next .link-arrow { margin-top: 12px; }
 
   .stamp { right: -6px; bottom: -30px; }
   .founder-photo img { box-shadow: 6px 6px 0 var(--ink); }
